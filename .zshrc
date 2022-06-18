@@ -1,0 +1,1 @@
+/home/kenko/.zprezto/runcoms/zshrc
