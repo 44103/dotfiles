@@ -22,6 +22,11 @@ else
   echo "curl or wget required"
 fi
 
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$DOTPATH}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+
 for f in "$DOTPATH"/.??*; do
     [ "$f" = ".git" ] && continue
     [ "$f" = ".gitconfig.local.template" ] && continue
