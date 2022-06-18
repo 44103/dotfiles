@@ -17,7 +17,7 @@ if has "git"; then
     elif has "wget"; then
       wget -O - "$tarball"
     fi | tar zxv
-    mv -f dotfiles-master "$DOTPATH"
+    mv -f dotfiles-main "$DOTPATH"
 else
   echo "curl or wget required"
 fi
