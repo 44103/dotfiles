@@ -1,19 +1,31 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 
-# 未定義な変数があったら途中で終了する
 set -u
 
-# 今のディレクトリ
-# dotfilesディレクトリに移動する
-BASEDIR=$(dirname $0)
-cd $BASEDIR
+has() {
+  which "$1" >/dev/null 2>&1
+  return $?
+}
 
-# dotfilesディレクトリにある、ドットから始まり2文字以上の名前のファイルに対して
+DOTPATH=~/.dotfiles
+if has "git"; then
+  git clone --recursive "$GITHUB_URL" "$DOTPATH"
+  elif has "curl" || has "wget"; then
+    tarball="https://github.com/b4b4r07/dotfiles/archive/master.tar.gz"
+    if has "curl"; then
+      curl -L "$tarball"
+    elif has "wget"; then
+      wget -O - "$tarball"
+    fi | tar zxv
+    mv -f dotfiles-master "$DOTPATH"
+else
+  echo "curl or wget required"
+fi
+
 for f in .??*; do
     [ "$f" = ".git" ] && continue
     [ "$f" = ".gitconfig.local.template" ] && continue
     [ "$f" = ".gitmodules" ] && continue
 
-    # シンボリックリンクを貼る
     ln -snfv ${PWD}/"$f" ~/
 done
