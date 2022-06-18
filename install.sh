@@ -22,10 +22,10 @@ else
   echo "curl or wget required"
 fi
 
-for f in .??*; do
+for f in "$DOTPATH"/.??*; do
     [ "$f" = ".git" ] && continue
     [ "$f" = ".gitconfig.local.template" ] && continue
     [ "$f" = ".gitmodules" ] && continue
 
-    ln -snfv "$DOTPATH"/"$f" ~/
+    ln -snfv "$f" ~/
 done
