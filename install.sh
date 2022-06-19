@@ -9,27 +9,16 @@ has() {
 
 DOTPATH=~/.dotfiles
 
-if has "git"; then
-  git clone --recursive https://github.com/44103/dotfiles.git "$DOTPATH"
-  elif has "curl" || has "wget"; then
-    tarball="https://github.com/44103/dotfiles/archive/main.tar.gz"
-    if has "curl"; then
-      curl -L "$tarball"
-    elif has "wget"; then
-      wget -O - "$tarball"
-    fi | tar zxv
-    mv -f dotfiles-main "$DOTPATH"
-else
-  echo "curl or wget required"
-fi
+git clone --recursive https://github.com/44103/dotfiles.git "$DOTPATH"
 
 setopt EXTENDED_GLOB
 for rcfile in "${DOTPATH}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${HOME}/.${rcfile:t}" 
 done
 
-for f in "$DOTPATH"/.??*; do
-  echo $f
+cd $DOTPATH
+
+for f in .??*; do
   [ "$f" = ".git" ] && continue
   [ "$f" = ".gitconfig.local.template" ] && continue
   [ "$f" = ".gitmodules" ] && continue
