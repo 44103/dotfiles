@@ -16,7 +16,7 @@ for rcfile in "${DOTPATH}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${HOME}/.${rcfile:t}" 
 done
 
-cd $DOTPATH
+cd "${DOTPATH}"
 
 for f in .??*; do
   [ "$f" = ".git" ] && continue
