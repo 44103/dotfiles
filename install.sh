@@ -8,6 +8,7 @@ has() {
 }
 
 DOTPATH=~/.dotfiles
+
 if has "git"; then
   git clone --recursive https://github.com/44103/dotfiles.git "$DOTPATH"
   elif has "curl" || has "wget"; then
@@ -23,14 +24,15 @@ else
 fi
 
 setopt EXTENDED_GLOB
-for rcfile in "${ZDOTDIR:-$DOTPATH}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+for rcfile in "${DOTPATH}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${HOME}/.${rcfile:t}" 
 done
 
 for f in "$DOTPATH"/.??*; do
-    [ "$f" = ".git" ] && continue
-    [ "$f" = ".gitconfig.local.template" ] && continue
-    [ "$f" = ".gitmodules" ] && continue
+  echo $f
+  [ "$f" = ".git" ] && continue
+  [ "$f" = ".gitconfig.local.template" ] && continue
+  [ "$f" = ".gitmodules" ] && continue
 
-    ln -snfv "$f" ~/
+  ln -snfv "$f" ~/
 done
