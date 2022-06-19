@@ -16,6 +16,7 @@ LS_COLORS="${LS_COLORS}:ow=02;34"; export LS_COLORS
 bindkey -v
 bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
+bindkey '^A' beginning-of-line
 
 setopt multios
 setopt prompt_subst
