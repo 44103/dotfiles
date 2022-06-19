@@ -23,5 +23,5 @@ for f in .??*; do
   [ "$f" = ".gitconfig.local.template" ] && continue
   [ "$f" = ".gitmodules" ] && continue
 
-  ln -snfv "$f" ~/
+  ln -snfv "${DOTPATH}/$f" ~/
 done
