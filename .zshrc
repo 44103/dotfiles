@@ -18,6 +18,12 @@ bindkey '\e[3~' delete-char
 bindkey '^R' history-incremental-search-backward
 bindkey '^A' beginning-of-line
 
+re-prompt() {
+    zle .reset-prompt
+    zle .accept-line
+}
+zle -N accept-line re-prompt
+
 setopt multios
 setopt prompt_subst
 setopt hist_reduce_blanks
