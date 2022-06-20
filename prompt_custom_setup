@@ -685,7 +685,7 @@ prompt_custom_setup() {
 		git:action           242
 		git:dirty            218
 		host                 242
-		path                 blue
+		path                 228
 		prompt:error         red
 		prompt:success       magenta
 		user                 242
