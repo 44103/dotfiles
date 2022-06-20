@@ -9,5 +9,5 @@
 
 ## install
 ```sh
-curl -L raw.github.com/44103/dotfiles/main/install.sh | zsh
+zsh -c "$(curl -L raw.github.com/44103/dotfiles/main/install.sh)"
 ```
