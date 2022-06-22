@@ -26,6 +26,4 @@ for f in .??*; do
   ln -snfv "${DOTPATH}/$f" ~/
 done
 
-ln -s "${DOTPATH}"/prompt_custom_setup "${DOTPATH}"/.zprezto/modules/prompt/functions/prompt_custom_setup
-
 exec `which zsh` -l
