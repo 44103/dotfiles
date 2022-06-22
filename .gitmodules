@@ -1,3 +1,6 @@
 [submodule ".zprezto"]
 	path = .zprezto
 	url = https://github.com/sorin-ionescu/prezto.git
+[submodule "modules/custom-prompt/external/async"]
+	path = modules/custom-prompt/external/async
+	url = https://github.com/mafredri/zsh-async.git
