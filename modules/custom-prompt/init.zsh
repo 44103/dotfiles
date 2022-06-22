@@ -6,7 +6,7 @@
 autoload -Uz promptinit && promptinit
 
 # Load the prompt theme.
-zstyle -a ':prezto:module:cursor
+zstyle -a ':prezto:module:custom-prompt
 ' theme 'prompt_argv'
 if [[ "$TERM" == (dumb|linux|*bsd*) ]] || (( $#prompt_argv < 1 )); then
   prompt 'off'
