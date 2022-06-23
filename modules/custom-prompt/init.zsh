@@ -14,6 +14,3 @@ else
   prompt "$prompt_argv[@]"
 fi
 unset prompt_argv
-
- DOTPATH=~/.dotfiles
- ln -snfv "${DOTPATH}/modules/custom-prompt/external/async" "${DOTPATH}/modules/custom-prompt/functions"
