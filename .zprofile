@@ -72,4 +72,4 @@ if [[ -z "$LESSOPEN" ]] && (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
-eval "$(brew shellenv)"
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
