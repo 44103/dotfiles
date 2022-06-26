@@ -22,8 +22,13 @@ for f in .??*; do
   [ "$f" = ".git" ] && continue
   [ "$f" = ".gitconfig.local.template" ] && continue
   [ "$f" = ".gitmodules" ] && continue
+  [ "$f" = ".config" ] && continue
 
   ln -snfv "${DOTPATH}/$f" ~/
+done
+
+for f in .config/??*; do
+  ln -snfv "${DOTPATH}/.config/$f" ~/
 done
 
 exec `which zsh` -l
