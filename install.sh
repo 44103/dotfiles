@@ -29,7 +29,7 @@ done
 
 mkdir -p ~/.config
 for f in .config/??*; do
-  ln -snfv "${DOTPATH}/.config/$f" "~/.config"
+  ln -snfv "${DOTPATH}/$f" ~/.config
 done
 
 exec `which zsh` -l
