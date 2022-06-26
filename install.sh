@@ -28,7 +28,7 @@ for f in .??*; do
 done
 
 for f in .config/??*; do
-  ln -snfv "${DOTPATH}/.config/$f" ~/
+  ln -snfv "${DOTPATH}/.config/$f" ~/.config
 done
 
 exec `which zsh` -l
