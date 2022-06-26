@@ -27,6 +27,7 @@ for f in .??*; do
   ln -snfv "${DOTPATH}/$f" ~/
 done
 
+mkdir -p ~/.config
 for f in .config/??*; do
   ln -snfv "${DOTPATH}/.config/$f" "~/.config/$f"
 done
