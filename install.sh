@@ -9,11 +9,11 @@ has() {
 
 DOTPATH=~/.dotfiles
 
-git clone --recursive https://github.com/44103/dotfiles.git "$DOTPATH"
+git clone --depth=1 --recursive https://github.com/44103/dotfiles.git "$DOTPATH"
 
 setopt EXTENDED_GLOB
 for rcfile in "${DOTPATH}"/.zprezto/runcoms/^README.md(.N); do
-  ln -s "$rcfile" "${HOME}/.${rcfile:t}" 
+  ln -s "$rcfile" "${HOME}/.${rcfile:t}"
 done
 
 cd "${DOTPATH}"
