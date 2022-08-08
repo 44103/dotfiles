@@ -12,8 +12,12 @@ set tabstop=2
 set shiftwidth=2
 " 検索結果をハイライト
 set hlsearch
-" yでコピーした時にクリップボードに入る
-set guioptions+=a
+" 検索文字列入力時に順次対象文字列にヒットさせる
+set incsearch
+" 検索するときに大文字小文字を区別しない
+set ignorecase
+" 小文字で検索すると大文字と小文字を無視して検索
+set smartcase
 " 対応する括弧を強調表示
 set showmatch
 " ヤンクでクリップボードにコピー
