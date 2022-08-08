@@ -21,7 +21,7 @@ set smartcase
 " 対応する括弧を強調表示
 set showmatch
 " ヤンクでクリップボードにコピー
-set clipboard=unnamed,autoselect
+set clipboard^=unnamedplus
 " UTF-8化
 set fenc=utf-8
 " バックアップファイルを作らない
