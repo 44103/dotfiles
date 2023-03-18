@@ -33,7 +33,7 @@ done
 
 for dir; do
   for f in $dir/??*; do
-    ln -snfv "${DOTPATH}/$dir/$f" ~/.config
+    ln -snfv "${DOTPATH}/$f" ~/.config
   done
 done
 
