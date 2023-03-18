@@ -1,1 +1,9 @@
-.vscode
+*.log
+
+.DS_Store
+
+Thumbs.db
+[Dd]esktop.ini
+
+/build/
+/bin/
