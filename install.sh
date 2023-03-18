@@ -39,4 +39,4 @@ done
 
 exec `which zsh` -l
 
-cd -
+cd ~
