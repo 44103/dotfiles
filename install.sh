@@ -38,3 +38,5 @@ for dir; do
 done
 
 exec `which zsh` -l
+
+cd -
