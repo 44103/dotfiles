@@ -31,12 +31,12 @@ for f in config/??*; do
   ln -snfv "${DOTPATH}/$f" ~/.config
 done
 
-echo "custom option"
 for dir; do
-  echo $dir
   for f in $dir/??*; do
     ln -snfv "${DOTPATH}/$dir/$f" ~/.config
   done
 done
 
 exec `which zsh` -l
+
+cd ${HOME}
