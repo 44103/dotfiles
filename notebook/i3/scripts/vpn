@@ -6,11 +6,11 @@
 # i3blocks blocklet script to monitor the (nord)vpn connection
 
 vpnstatus="📢"
-nordvpn_output=$(nordvpn status | cat -v | head -1 | sed -e 's/\^M-^M  ^M//g' )
+nordvpn_output=$(nordvpn status | cat -v | head -1 | sed -e 's/\^M-^M  ^M//g')
 if [ "${nordvpn_output}" = "Status: Connected" ]; then
     vpnstatus="🥸"
 elif [ "${nordvpn_output}" = "A new version of NordVPN is available! Please update the application." ]; then
-    nordvpn_output=$(nordvpn status | cat -v | head -2 | tail -1 | sed -e 's/\^M-^M  ^M//g' )
+    nordvpn_output=$(nordvpn status | cat -v | head -2 | tail -1 | sed -e 's/\^M-^M  ^M//g')
     if [ "${nordvpn_output}" = "Status: Connected" ]; then
         vpnstatus="🥴"
     elif [ "${nordvpn_output}" = "Status: Disconnected" ]; then
