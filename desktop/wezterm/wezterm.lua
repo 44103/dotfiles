@@ -3,7 +3,7 @@ local wezterm = require 'wezterm'
 return {
   font = wezterm.font_with_fallback {
     {
-      family = "Ricty",
+      family = "Ricty Diminished",
       weight = "Regular",
       stretch = "Normal",
       style = "Normal"
