@@ -130,7 +130,7 @@ prompt_cursor_preprompt_render() {
 	local -a preprompt_parts
 
   # Set time
-  preprompt_parts+=('%T') 
+  preprompt_parts+=('%T')
 
 	# Set the path.
 	preprompt_parts+=('%F{${prompt_cursor_colors[path]}}%~%f')
@@ -687,7 +687,7 @@ prompt_cursor_setup() {
 		host                 242
 		path                 cyan
 		prompt:error         red
-		prompt:success       magenta
+		prompt:success       214
 		user                 242
 		user:root            default
 		virtualenv           242
