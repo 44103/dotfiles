@@ -24,6 +24,7 @@ set showmatch
 set clipboard^=unnamedplus
 " UTF-8化
 set fenc=utf-8
+set encoding=utf-8
 " バックアップファイルを作らない
 set nobackup
 " スワップファイルを作らない
