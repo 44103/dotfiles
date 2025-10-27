@@ -37,6 +37,8 @@ for dir; do
   done
 done
 
+git config --global commit.template "${DOTPATH}/config/git/commit_template"
+
 exec `which zsh` -l
 
 cd ${HOME}
