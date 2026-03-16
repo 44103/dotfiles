@@ -1,14 +1,7 @@
-# Editors / Pager
-export EDITOR="${EDITOR:-vi}"
-export VISUAL="${VISUAL:-vi}"
-export PAGER="${PAGER:-less}"
-
-# Less options
-export LESS='-g -i -M -R -S -w -X -z-4'
-
 # Paths (unique)
 typeset -gU cdpath fpath mailpath path
 path=(
+  "$HOME/.local/share/mise/bin"
   "$HOME/.local/bin"
   "$HOME/bin"
   "$HOME/sbin"
@@ -16,6 +9,17 @@ path=(
   "/usr/local/sbin"
   $path
 )
+
+# mise
+eval "$(mise activate zsh)"
+
+# Editors / Pager
+export EDITOR="${EDITOR:-vi}"
+export VISUAL="${VISUAL:-vi}"
+export PAGER="${PAGER:-less}"
+
+# Less options
+export LESS='-g -i -M -R -S -w -X -z-4'
 
 # sheldon (sources plugins including completions)
 eval "$(sheldon source)"
@@ -72,9 +76,6 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt hist_ignore_all_dups
-
-# mise
-eval "$(mise activate zsh)"
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
