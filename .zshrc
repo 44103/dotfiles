@@ -1,7 +1,10 @@
 # Paths (unique)
+export PNPM_HOME="$HOME/.local/share/pnpm"
 typeset -gU cdpath fpath mailpath path
 path=(
   "$HOME/.local/share/mise/bin"
+  "$HOME/.local/share/mise/shims"
+  "$PNPM_HOME"
   "$HOME/.local/bin"
   "$HOME/bin"
   "$HOME/sbin"
@@ -9,9 +12,6 @@ path=(
   "/usr/local/sbin"
   $path
 )
-
-# mise
-eval "$(mise activate zsh)"
 
 # Editors / Pager
 export EDITOR="${EDITOR:-vi}"
@@ -24,9 +24,13 @@ export LESS='-g -i -M -R -S -w -X -z-4'
 # sheldon (sources plugins including completions)
 eval "$(sheldon source)"
 
-# initialise completions
+# initialise completions with cache
 autoload -Uz compinit
-compinit
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.m-1) ]]; then
+  compinit -C
+else
+  compinit
+fi
 
 # completion settings (Prezto style)
 zstyle ':completion:*' menu select
@@ -76,10 +80,3 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt hist_ignore_all_dups
-
-# pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
