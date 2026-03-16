@@ -1,3 +1,5 @@
 [tools]
+"github:rossmacarthur/sheldon" = "latest"
 node = "lts"
 pnpm = "latest"
+starship = "latest"
