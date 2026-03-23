@@ -13,3 +13,7 @@ github = "zsh-users/zsh-autosuggestions"
 
 [plugins.zsh-history-substring-search]
 github = "zsh-users/zsh-history-substring-search"
+
+[plugins.git-auto-fetch]
+local = "~/.config/sheldon/plugins"
+use = ["git-auto-fetch.zsh"]
