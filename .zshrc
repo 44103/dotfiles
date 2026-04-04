@@ -2,7 +2,6 @@
 export PNPM_HOME="$HOME/.local/share/pnpm"
 typeset -gU cdpath fpath mailpath path
 path=(
-  "$HOME/.local/share/mise/bin"
   "$HOME/.local/share/mise/shims"
   "$PNPM_HOME"
   "$HOME/.local/bin"
