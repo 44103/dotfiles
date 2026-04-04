@@ -2,8 +2,11 @@
 
 set -u
 
+# Set locale to suppress warnings in containers
+export LC_ALL=C.UTF-8
+
 has() {
-  which "$1" >/dev/null 2>&1
+  type "$1" >/dev/null 2>&1
   return $?
 }
 
@@ -40,13 +43,18 @@ if ! has "mise"; then
   echo "Installing mise..."
   curl https://mise.jdx.dev/install.sh | sh
   # Add mise to path for the rest of the script
-  export PATH="$HOME/.local/share/mise/bin:$PATH"
+  export PATH="$HOME/.local/bin:$PATH"
+  rehash
 fi
 
 # Install tools via mise
-echo "Installing tools via mise..."
-# starship is directly supported, sheldon is installed from github releases
-mise use -g starship github:rossmacarthur/sheldon node@lts pnpm@latest
+if has "mise"; then
+  echo "Installing tools via mise..."
+  mise use -g starship github:rossmacarthur/sheldon node@lts pnpm@latest
+else
+  echo "mise not found even after installation attempt."
+  exit 1
+fi
 
 # Set git commit template
 git config --global commit.template "${DOTPATH}/config/git/commit_template"
