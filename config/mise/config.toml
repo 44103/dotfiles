@@ -1,5 +1,10 @@
+# Essential tools (always loaded)
 [tools]
-"github:rossmacarthur/sheldon" = "latest"
+gh = "latest"
 node = "lts"
 pnpm = "latest"
+"github:rossmacarthur/sheldon" = "latest"
 starship = "latest"
+
+[settings]
+fetch_remote_versions_cache = "7d"
