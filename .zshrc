@@ -43,7 +43,8 @@ zstyle ':completion:*:*:*:*:descriptions' format '%F{green}-- %d --%f'
 zstyle ':completion:*:messages' format ' %F{purple} -- %d --%f'
 zstyle ':completion:*:warnings' format ' %F{red}-- no matches found --%f'
 
-# starship
+# starship (use local config if available)
+[[ -f ~/.config/starship.local.toml ]] && export STARSHIP_CONFIG=~/.config/starship.local.toml
 eval "$(starship init zsh)"
 
 # zsh settings
