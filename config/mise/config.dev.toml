@@ -1,0 +1,15 @@
+# Development tools (loaded when MISE_ENV includes "dev")
+[tools]
+devcontainer-cli = "latest"
+fd = "latest"
+fzf = "latest"
+gcloud = "latest"
+ghq = "latest"
+herdr = "latest"
+kubectl = "latest"
+lazygit = "latest"
+neovim = "latest"
+python = "3.12"
+ripgrep = "latest"
+tree-sitter = "latest"
+"github:astral-sh/uv" = "latest"
