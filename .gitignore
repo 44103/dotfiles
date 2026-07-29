@@ -1,3 +1,4 @@
-# Machine-specific mise config
+# Machine-specific config (not tracked)
 config/mise/config.local.toml
 config/mise/config.*.local.toml
+config/starship.local.toml
