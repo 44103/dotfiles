@@ -1,5 +1,5 @@
-# Load local environment variables (machine-specific, not tracked in git)
-[[ -f ~/.env.local ]] && source ~/.env.local
+# Load local configs (machine-specific, not tracked in git)
+for f in ~/.dotfiles/local.d/*.sh(N); do source $f; done
 
 # Paths (unique)
 export PNPM_HOME="$HOME/.local/share/pnpm"
