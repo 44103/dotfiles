@@ -1,3 +1,6 @@
+# Load local environment variables (machine-specific, not tracked in git)
+[[ -f ~/.env.local ]] && source ~/.env.local
+
 # Paths (unique)
 export PNPM_HOME="$HOME/.local/share/pnpm"
 typeset -gU cdpath fpath mailpath path
