@@ -10,6 +10,21 @@ has() {
   return $?
 }
 
+# Parse options
+PRESET=""
+while getopts "s:" opt; do
+  case $opt in
+    s)
+      PRESET="$OPTARG"
+      ;;
+    \?)
+      echo "Usage: $0 [-s preset]"
+      echo "  Presets: wsl, container (default)"
+      exit 1
+      ;;
+  esac
+done
+
 DOTPATH=~/.dotfiles
 
 # Clone if not exists
@@ -58,5 +73,32 @@ fi
 
 # Set git commit template
 git config --global commit.template "${DOTPATH}/config/git/commit_template"
+
+# Apply preset-specific configurations
+case "$PRESET" in
+  wsl)
+    echo "Applying WSL preset..."
+    # Create local.d directory
+    mkdir -p "${DOTPATH}/local.d"
+    # Write MISE_ENV setting
+    echo 'export MISE_ENV="dev,local"' > "${DOTPATH}/local.d/00-env.sh"
+    # Symlink WSL-specific env
+    ln -snfv "${DOTPATH}/profiles/wsl/env.sh" "${DOTPATH}/local.d/30-wsl-env.sh"
+    # Set MISE_ENV for current session and install dev tools
+    if has "mise"; then
+      echo "Installing dev tools via mise..."
+      export MISE_ENV="dev,local"
+      mise install
+    fi
+    ;;
+  container|"")
+    # Default/container preset: no additional setup needed
+    ;;
+  *)
+    echo "Unknown preset: $PRESET"
+    echo "Available presets: wsl, container"
+    exit 1
+    ;;
+esac
 
 echo "Installation complete. Please restart your shell."
