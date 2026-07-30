@@ -1,3 +1,4 @@
 # mise environment configuration
-# This file sets which config environments to load
-env = ["dev"]
+# Environment is controlled via MISE_ENV variable (set in local.d/00-env.sh)
+# - Default (container): no extra environments
+# - WSL: MISE_ENV="dev,local" loads config.dev.toml and config.local.toml
