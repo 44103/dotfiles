@@ -1,6 +1,3 @@
-# Load local configs (machine-specific, not tracked in git)
-for f in ~/.dotfiles/local.d/*.sh(N); do source $f; done
-
 # Paths (unique)
 export PNPM_HOME="$HOME/.local/share/pnpm"
 typeset -gU cdpath fpath mailpath path
@@ -83,3 +80,7 @@ HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt hist_ignore_all_dups
+
+# Load local configs (machine-specific, not tracked in git)
+for f in ~/.dotfiles/local.d/*.sh(N); do source $f; done
+
