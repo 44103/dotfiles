@@ -1,0 +1,10 @@
+onboarding = false
+
+[keys]
+previous_agent = "prefix+ctrl+k"
+next_agent = "prefix+ctrl+j"
+previous_workspace = "prefix+ctrl+u"
+next_workspace = "prefix+ctrl+d"
+
+[ui]
+redraw_on_focus_gained = true
