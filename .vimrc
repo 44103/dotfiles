@@ -43,3 +43,6 @@ let g:netrw_liststyle=3
 let g:netrw_altv=1
 " 'o'でファイルを開くときは下側に開く。(デフォルトが上側なので入れ替え)
 let g:netrw_alto=1
+
+" viminfo ファイルをキャッシュディレクトリに配置
+set viminfofile=~/.cache/viminfo
