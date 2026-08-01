@@ -1,5 +1,6 @@
 # Development tools (loaded when MISE_ENV includes "dev")
 [tools]
+bitwarden = "latest"
 devcontainer-cli = "latest"
 fd = "latest"
 fzf = "latest"
