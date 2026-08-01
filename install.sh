@@ -72,7 +72,7 @@ else
 fi
 
 # Set git commit template
-git config --global commit.template "${DOTPATH}/config/git/commit_template"
+git config --global commit.template "${DOTPATH}/config/git/commit.template"
 
 # Apply preset-specific configurations
 case "$PRESET" in
