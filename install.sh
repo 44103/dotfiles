@@ -65,7 +65,7 @@ fi
 # Install tools via mise
 if has "mise"; then
   echo "Installing tools via mise..."
-  mise use -g starship github:rossmacarthur/sheldon node@lts pnpm@latest
+  mise install
 else
   echo "mise not found even after installation attempt."
   exit 1
