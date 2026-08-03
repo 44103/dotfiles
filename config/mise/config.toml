@@ -7,4 +7,4 @@ pnpm = "latest"
 starship = "latest"
 
 [settings]
-fetch_remote_versions_cache = "7d"
+minimum_release_age = "7d"
