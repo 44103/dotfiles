@@ -44,3 +44,23 @@ vim.keymap.set("n", "<C-Right>", function()
     vim.cmd("vertical resize +2")
   end
 end, { desc = "Resize window width (direction-aware)" })
+
+
+-- Open the commit/PR page for the current line's git blame
+vim.keymap.set("n", "<leader>gp", function()
+  local line = vim.fn.line(".")
+  local file = vim.fn.expand("%:p")
+  -- Get commit hash from git blame
+  local blame = vim.fn.systemlist(string.format("git blame -L %d,%d --porcelain %s", line, line, file))
+  local commit = blame[1] and blame[1]:match("^(%x+)")
+
+  if commit and not commit:find("^0+$") then
+    -- Open commit page with gh browse (PR link is shown on GitHub commit page)
+    local result = vim.fn.system(string.format("gh browse %s 2>&1", commit))
+    if vim.v.shell_error ~= 0 then
+      vim.notify("Failed to open: " .. result, vim.log.levels.ERROR)
+    end
+  else
+    vim.notify("No blame info found", vim.log.levels.WARN)
+  end
+end, { desc = "Open commit (with PR link) for current line" })
