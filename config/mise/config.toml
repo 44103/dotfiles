@@ -5,6 +5,7 @@ node = "lts"
 pnpm = "latest"
 "github:rossmacarthur/sheldon" = "latest"
 starship = "latest"
+imagemagick = "latest"
 
 [settings]
 minimum_release_age = "7d"
