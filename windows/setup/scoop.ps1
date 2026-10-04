@@ -1,6 +1,6 @@
 # Scoop installer
-# Usage: setup.bat  (recommended — runs all setup scripts including this one)
-#    or: powershell -ExecutionPolicy Bypass -File scoop.ps1
+# Usage: setup\main.bat  (recommended — runs all setup scripts including this one)
+#    or: powershell -ExecutionPolicy Bypass -File setup\scoop.ps1
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
