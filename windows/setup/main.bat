@@ -3,7 +3,7 @@
 :: Add new .ps1 scripts to the list below in the desired execution order
 setlocal enabledelayedexpansion
 
-set scripts=scoop.ps1
+set scripts=scoop.ps1 noctty.ps1
 
 echo === Windows Setup ===
 echo.

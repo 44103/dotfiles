@@ -1,0 +1,24 @@
+command = direct:wsl.exe --cd ~ -e zsh -il -c "herdr; exec zsh"
+
+initial-copy-on-select = clipboard
+window-inherit-working-directory = false
+tab-inherit-working-directory = false
+split-inherit-working-directory = false
+font-family = "RecMonoCasual Nerd Font"
+font-size = 10
+font-feature = -calt
+background-opacity = 0.95
+
+keybind = clear
+keybind = ctrl+shift+,=reload_config
+keybind = ctrl+,=open_config
+keybind = ctrl+shift+c=copy_to_clipboard
+keybind = ctrl+shift+v=paste_from_clipboard
+keybind = ctrl+==increase_font_size:1
+keybind = ctrl++=increase_font_size:1
+keybind = ctrl+-=decrease_font_size:1
+keybind = ctrl+0=reset_font_size
+keybind = alt+f4=close_window
+
+theme = Dark+
+scrollback-limit = 0
